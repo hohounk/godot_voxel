@@ -1,7 +1,7 @@
 #ifndef ZN_GODOT_LABEL_H
 #define ZN_GODOT_LABEL_H
 
-#if defined(ZN_GODOT)
+#if defined(ZN_GODOT) || BLAZIUM
 #include <scene/gui/label.h>
 #elif defined(ZN_GODOT_EXTENSION)
 #include <godot_cpp/classes/label.hpp>

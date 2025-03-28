@@ -102,7 +102,7 @@ public:
 	) const override;
 
 	Error import(
-#if GODOT_VERSION_MAJOR == 4 && GODOT_VERSION_MINOR >= 4
+#if (GODOT_VERSION_MAJOR == 4 && GODOT_VERSION_MINOR >= 4) || BLAZIUM
 			ResourceUID::ID p_source_id,
 #endif
 			const String &p_source_file,
@@ -113,7 +113,7 @@ public:
 			Variant *r_metadata = nullptr
 	) override;
 
-#if GODOT_VERSION_MAJOR == 4 && GODOT_VERSION_MINOR >= 3
+#if (GODOT_VERSION_MAJOR == 4 && GODOT_VERSION_MINOR >= 3) || BLAZIUM
 	bool can_import_threaded() const override;
 #endif
 

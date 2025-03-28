@@ -65,7 +65,7 @@ bool ZN_EditorImportPlugin::get_option_visibility(
 }
 
 Error ZN_EditorImportPlugin::import(
-#if GODOT_VERSION_MAJOR == 4 && GODOT_VERSION_MINOR >= 4
+#if (GODOT_VERSION_MAJOR == 4 && GODOT_VERSION_MINOR >= 4) || BLAZIUM
 		ResourceUID::ID p_source_id,
 #endif
 		const String &p_source_file,

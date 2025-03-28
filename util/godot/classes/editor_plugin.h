@@ -31,7 +31,7 @@ public:
 	EditorPlugin::AfterGUIInput forward_3d_gui_input(Camera3D *p_camera, const Ref<InputEvent> &p_event) override;
 	void save_external_data() override;
 
-#if VERSION_MAJOR == 4 && VERSION_MINOR <= 3
+#if VERSION_MAJOR == 4 && VERSION_MINOR <= 3 && !BLAZIUM
 	String get_name() const override;
 #else
 	String get_plugin_name() const override;

@@ -24,7 +24,7 @@ void ZN_EditorPlugin::save_external_data() {
 	_zn_save_external_data();
 }
 
-#if VERSION_MAJOR == 4 && VERSION_MINOR <= 3
+#if VERSION_MAJOR == 4 && VERSION_MINOR <= 3 && !BLAZIUM
 String ZN_EditorPlugin::get_name() const {
 	return _zn_get_plugin_name();
 }

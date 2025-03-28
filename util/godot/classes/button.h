@@ -14,7 +14,7 @@ namespace zylann::godot {
 inline void set_button_icon(Button &button, Ref<Texture2D> icon) {
 #if defined(ZN_GODOT)
 
-#if VERSION_MAJOR == 4 && VERSION_MINOR <= 3
+#if VERSION_MAJOR == 4 && VERSION_MINOR <= 3 && !BLAZIUM
 	button.set_icon(icon);
 #else
 	button.set_button_icon(icon);

@@ -22,7 +22,7 @@
 #include "graph_nodes_doc_data.h"
 
 #ifdef ZN_GODOT
-#if GODOT_VERSION_MAJOR == 4 && GODOT_VERSION_MINOR >= 4
+#if (GODOT_VERSION_MAJOR == 4 && GODOT_VERSION_MINOR >= 4) || BLAZIUM
 #include <editor/editor_node.h>
 #endif
 #endif
@@ -173,7 +173,7 @@ VoxelGraphNodeDialog::VoxelGraphNodeDialog() {
 	// TODO Replace QuickOpen with listing of project functions directly in the dialog
 	// TODO GDX: EditorQuickOpen is not exposed to extensions
 #ifdef ZN_GODOT
-#if GODOT_VERSION_MAJOR == 4 && GODOT_VERSION_MINOR <= 3
+#if GODOT_VERSION_MAJOR == 4 && GODOT_VERSION_MINOR <= 3 && !BLAZIUM
 	_function_quick_open_dialog = memnew(EditorQuickOpen);
 	_function_quick_open_dialog->connect(
 			"quick_open", callable_mp(this, &VoxelGraphNodeDialog::_on_function_quick_open_dialog_quick_open)
@@ -381,7 +381,7 @@ void VoxelGraphNodeDialog::_on_tree_item_activated() {
 
 	} else if (id == ID_FUNCTION_QUICK_OPEN) {
 #ifdef ZN_GODOT
-#if GODOT_VERSION_MAJOR == 4 && GODOT_VERSION_MINOR <= 3
+#if GODOT_VERSION_MAJOR == 4 && GODOT_VERSION_MINOR <= 3 && !BLAZIUM
 		// Quick open function nodes
 		_function_quick_open_dialog->popup_dialog(pg::VoxelGraphFunction::get_class_static());
 #else
@@ -439,7 +439,7 @@ void VoxelGraphNodeDialog::_on_function_file_dialog_file_selected(String fpath) 
 	hide();
 }
 
-#if GODOT_VERSION_MAJOR == 4 && GODOT_VERSION_MINOR <= 3
+#if GODOT_VERSION_MAJOR == 4 && GODOT_VERSION_MINOR <= 3 && !BLAZIUM
 void VoxelGraphNodeDialog::_on_function_quick_open_dialog_quick_open() {
 #ifdef ZN_GODOT
 	String fpath = _function_quick_open_dialog->get_selected();

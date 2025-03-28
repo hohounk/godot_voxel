@@ -8,6 +8,7 @@
 #include "../../util/godot/classes/editor_selection.h"
 #include "../../util/godot/classes/node.h"
 #include "../../util/godot/classes/object.h"
+#include "../../util/godot/classes/shortcut.h"
 #include "../../util/godot/classes/resource_saver.h"
 #include "../../util/godot/core/string.h"
 #include "../../util/godot/editor_scale.h"

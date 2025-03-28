@@ -2,6 +2,9 @@
 #include "../../util/containers/std_vector.h"
 #include "../../util/godot/core/packed_arrays.h"
 #include "../../util/godot/editor_scale.h"
+#include "../../util/godot/classes/label.h"
+#include "../../util/godot/classes/popup_menu.h"
+#include "../../util/godot/classes/line_edit.h"
 #include "chart_view.h"
 
 #include <scene/gui/box_container.h>
@@ -11,7 +14,6 @@
 #include <scene/gui/spin_box.h>
 
 namespace zylann {
-
 NoiseAnalysisWindow::NoiseAnalysisWindow() {
 	set_title(TTR("Noise Analysis"));
 	set_min_size(Vector2(300.f * EDSCALE, 0));
