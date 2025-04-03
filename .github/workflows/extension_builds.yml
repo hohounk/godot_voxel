@@ -92,7 +92,7 @@ jobs:
         with:
           platform: ${{ matrix.target.platform }}
           em-version: 3.1.62
-          # windows-compiler: msvc
+          windows-compiler: msvc
       
       # Load build cache
       - name: Cache .scons_cache
@@ -106,7 +106,7 @@ jobs:
         env:
           SCONS_CACHE: ${{ github.workspace }}/.scons-cache/
         run: |
-          scons target=${{ matrix.target-type }} platform=${{ matrix.target.platform }} arch=${{ matrix.target.arch }} precision=${{ matrix.float-precision }} dev_build=no
+          scons target=${{ matrix.target-type }} platform=${{ matrix.target.platform }} arch=${{ matrix.target.arch }} precision=${{ matrix.float-precision }} dev_build=no verbose=yes
 
       # Sign the binary (macOS only)
       # - name: Mac Sign
